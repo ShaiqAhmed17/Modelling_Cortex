@@ -10,9 +10,10 @@ import numpy as np
 from pathlib import Path
 import sys
 
-REPO_ROOT = Path('/scratch3/shaiq_home/repos/behaviour_ddpm')
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+from repo_paths import ensure_repo_on_syspath, resolve_repo_root
+
+REPO_ROOT = resolve_repo_root(Path(__file__))
+ensure_repo_on_syspath(REPO_ROOT)
 
 from purias_utils.util.arguments_yaml import ConfigNamepace
 from ddpm import tasks, model as ddpm_model_module

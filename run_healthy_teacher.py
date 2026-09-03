@@ -15,13 +15,14 @@ from pathlib import Path
 from sklearn.decomposition import PCA
 import torch
 import colorsys
-from purias_utils.multiitem_working_memory.util.circle_utils import polar2cart
+from repo_paths import ensure_repo_on_syspath, resolve_repo_root
 
 # Setup paths
-REPO_ROOT = Path('/scratch3/shaiq_home/repos/behaviour_ddpm')
-sys.path.insert(0, str(REPO_ROOT))
+REPO_ROOT = resolve_repo_root(Path(__file__))
+ensure_repo_on_syspath(REPO_ROOT)
 
 from ddpm.utils.loading import generate_model_and_task_from_args_path_multiepoch
+from purias_utils.multiitem_working_memory.util.circle_utils import polar2cart
 
 # Constants
 PREP_IDX = 2
