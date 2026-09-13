@@ -166,17 +166,4 @@ Recommended practice:
 
 ---
 
-## Practical notes for future cleanup
-
-If you want this repo to be easier to reuse across machines, high-impact next steps are:
-
-1. centralize dependencies in a root `requirements.txt` or `pyproject.toml`,
-2. replace hard-coded absolute paths with repo-root-relative resolution,
-3. add a single orchestration script or Makefile for the main teacher→student→analysis pipeline,
-4. document canonical dataset/result directory expectations in one config file.
-
----
-
-## Author context
-
 This README is tailored to the current repository structure and workflow conventions in `ShaiqAhmed17/Modelling_Cortex`, with emphasis on your ablation/recovery + representational-geometry analysis pipeline.
